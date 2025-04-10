@@ -1,6 +1,7 @@
 package com.meac.email_service.controllers;
 
 import com.meac.email_service.application.EmailSenderService;
+import com.meac.email_service.core.dtos.EmailRequest;
 import com.meac.email_service.core.exceptions.EmailServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
