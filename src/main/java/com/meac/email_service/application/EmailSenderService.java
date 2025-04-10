@@ -10,7 +10,7 @@ public class EmailSenderService implements EmailSenderUseCase {
 
     private final EmailSenderGateway emailSenderGateway;
 
-    @Autowired
+
     public EmailSenderService(EmailSenderGateway emailSenderGateway) {
         this.emailSenderGateway = emailSenderGateway;
     }

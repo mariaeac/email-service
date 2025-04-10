@@ -13,8 +13,6 @@ public class SESEmailSender implements EmailSenderGateway {
 
     private final AmazonSimpleEmailService emailService;
 
-
-    @Autowired
     public SESEmailSender(AmazonSimpleEmailService emailService) {
         this.emailService = emailService;
     }
@@ -23,7 +21,7 @@ public class SESEmailSender implements EmailSenderGateway {
     public void sendEmail(String to, String subject, String body) {
 
         SendEmailRequest request = new SendEmailRequest()
-                .withSource("meac@gmail.com")
+                .withSource("awsemail@gmail.com")
                 .withDestination(new Destination().withToAddresses(to))
                 .withMessage(new Message().withSubject(new Content(subject)).withBody(new Body().withText(new Content(body))));
 

@@ -18,7 +18,7 @@ public class EmailSenderController {
     private final EmailSenderService emailSenderService;
 
 
-    @Autowired
+
     public EmailSenderController(final EmailSenderService emailSenderService) {
         this.emailSenderService = emailSenderService;
     }
@@ -28,7 +28,7 @@ public class EmailSenderController {
 
         try {
             this.emailSenderService.sendEmail(request.to(), request.subject(), request.body());
-            return ResponseEntity.ok("Email sent successfully");
+            return ResponseEntity.ok("Email send successfully");
         } catch (EmailServiceException e) {
            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
