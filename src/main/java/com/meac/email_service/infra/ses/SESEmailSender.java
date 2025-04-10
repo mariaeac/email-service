@@ -4,12 +4,15 @@ import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
 import com.meac.email_service.adapters.EmailSenderGateway;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SESEmailSender implements EmailSenderGateway {
 
     private final AmazonSimpleEmailService emailService;
 
 
+    @Autowired
     public SESEmailSender(AmazonSimpleEmailService emailService) {
         this.emailService = emailService;
     }
