@@ -1,8 +1,10 @@
 package com.meac.email_service.infra.ses;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
 import com.meac.email_service.adapters.EmailSenderGateway;
+import com.meac.email_service.core.exceptions.EmailServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,8 +30,8 @@ public class SESEmailSender implements EmailSenderGateway {
 
         try {
             emailService.sendEmail(request);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (AmazonServiceException exception) {
+           throw new EmailServiceException("A error occurred while sending the email", exception);
         }
 
     }
