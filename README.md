@@ -3,6 +3,8 @@
 ![Java](https://img.shields.io/badge/Java-21-blue?style=for-the-badge&logo=java)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3-green?style=for-the-badge&logo=springboot)
 
+API de envio de e-mail utilizando Java, Spring e AWS Simple Email Service. 
+
 
 ## 🚀 Tecnologias Utilizadas
 - **Java 21**
